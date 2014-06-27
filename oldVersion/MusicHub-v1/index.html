@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+
+    <meat charset="utf-8"></meat>
+    <title>MusicHub</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <a href=""><h1>Music Hub</h1></a>
+    
+    <audio id="player">
+    </audio>
+    
+    <div id="bar">
+    
+        <progress id="progress" value="20" max="100"></progress>
+        
+        <!-- Info about the currently playing song -->
+        <section id="playing">
+            <span id="artist"></span>
+            <span> - </span>
+            <span id="song"></span>
+        </section>
+        
+        <div id="rightSide">
+            <!-- controlls for the player -->
+            <section id="controls">
+                <div id="backward" class="control">
+                    <i class="fa fa-fw fa-backward"></i>
+                </div>
+                <div id="playpause" class="control">
+                    <i class="fa fa-fw fa-pause"></i>
+                </div>
+                <div id="forward" class="control">
+                    <i class="fa fa-fw fa-forward"></i>
+                </div>
+            </section>
+
+            <!-- Credits to me ^^ -->
+            <section id="credits">
+                by <a href="http://discussionhub.net/member.php?action=profile&uid=543">HoverBaum</a>
+            </section>
+        </div>
+    </div>
+    
+    <script>
+        startPlayer();
+    </script>
+</body>
+</html>
