@@ -213,25 +213,8 @@ progress[value]::-webkit-progress-value {
 }
 
 /*
-================================================================
-	Change things.
+	Change the background image.
 */
-
-.changer {
-	position: fixed;
-}
-
-.changer .change-holder {
-	background-color: #eee;
-	padding: 0.3em;
-	display: none;
-	transition: all 0.3s ease-out;
-	z-index: 900;
-}
-
-.changer:hover .change-holder {
-	display: block !important; 
-}
 
 #back-change {
 	position: fixed;
@@ -239,8 +222,13 @@ progress[value]::-webkit-progress-value {
 	left: 1em;
 }
 
+#back-change:hover #images {
+	display: block;
+}
+
 #images {
-	
+	display: none;
+	transition: all 0.3s ease-out;
 }
 
 #images img{
@@ -255,10 +243,4 @@ progress[value]::-webkit-progress-value {
 
 #images img:hover {
 	box-shadow: 0px 0px 2px 0px #000;
-}
-
-#playlist-change {
-	position: fixed;
-	top: 1em;
-	right: 1em;
 }

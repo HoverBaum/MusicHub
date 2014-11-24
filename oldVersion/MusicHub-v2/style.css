@@ -6,7 +6,7 @@ body {
 }
 
 body {
-    background-image: url("img/clouds.jpg");
+    background-image: url("clouds.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -27,16 +27,6 @@ a {
     text-decoration: none;
     color: #2e86c1;
 	font-family: 'Dosis', sans-serif;
-}
-
-a:hover {
-    color: #678d9f;
-}
-
-#logo {
-	display: block;
-	margin: 0 auto;
-	padding-top: 2em;
 }
 
 /*
@@ -210,55 +200,4 @@ progress[value]::-webkit-progress-value {
 
 #playlist-container > .song > a:hover {
     color: #678d9f;
-}
-
-/*
-================================================================
-	Change things.
-*/
-
-.changer {
-	position: fixed;
-}
-
-.changer .change-holder {
-	background-color: #eee;
-	padding: 0.3em;
-	display: none;
-	transition: all 0.3s ease-out;
-	z-index: 900;
-}
-
-.changer:hover .change-holder {
-	display: block !important; 
-}
-
-#back-change {
-	position: fixed;
-	top: 1em;
-	left: 1em;
-}
-
-#images {
-	
-}
-
-#images img{
-	width: 4em;
-	height: auto;
-	border: 1px solid #464646;
-	display: block;
-	margin-bottom: 0.5em;
-	cursor: pointer;
-	transition: all 0.3s ease-out;
-}
-
-#images img:hover {
-	box-shadow: 0px 0px 2px 0px #000;
-}
-
-#playlist-change {
-	position: fixed;
-	top: 1em;
-	right: 1em;
 }

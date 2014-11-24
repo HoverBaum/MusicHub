@@ -61,7 +61,7 @@ var interval;
 
 //Start the player
 function startPlayer() {
-	songs = adrian;
+	songs = NCS;
     registerHandlers();
     setPlayingSong(songs[0]);
     interval = setInterval(progress, 15);
@@ -197,7 +197,7 @@ function updateSound() {
 
 //
 //***************************************************************************************************************
-//	Things needed to change the background
+//	Things needed to change the backgorund
 
 //Initializes the change of the backgorund by adding click-listener
 function initBackgroundChange() {

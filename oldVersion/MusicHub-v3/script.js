@@ -1,7 +1,6 @@
 //Some usefull things
 var get = function(id){ return document.getElementById(id) };
-var songs = [];
-var adrian = [
+var songs = [
         {
             artist: "Adrian von Ziegler",
             title: "Welcome Home",
@@ -27,41 +26,12 @@ var adrian = [
 			link: "https://www.youtube.com/watch?v=yj_wyw6Xrq4&list=TLNn_QyL47qqxJGO3rVb_Te6fwGNrvziZh"
         }
     ];
-
-var NCS = [
-	{
-		artist: "Luke Carpenter & John Ross",
-		title: "California",
-		file: "songs/California.mp3",
-		link: ""
-	},
-	{
-		artist: "Tobu",
-		title: "Life",
-		file: "songs/Life.mp3",
-		link: ""
-	},
-	{
-		artist: "Janji",
-		title: "Together",
-		file: "songs/Together.mp3",
-		link: ""
-	},
-	{
-		artist: "OLWK",
-		title: "Taking Over",
-		file: "songs/TakingOver.mp3",
-		link: ""
-	}
-]
-
 //index of currently played song.
 var index = 0;
 var interval;
 
 //Start the player
 function startPlayer() {
-	songs = adrian;
     registerHandlers();
     setPlayingSong(songs[0]);
     interval = setInterval(progress, 15);
@@ -73,35 +43,6 @@ function registerHandlers() {
     get("playpause").addEventListener("click", playPause, false);
     get("backward").addEventListener("click", backward, false);
     get("forward").addEventListener("click", forward, false);
-	document.body.addEventListener("keypress", globalKeypress, false);
-	
-	children = get("playlist-links").childNodes;
-	for(var i = 0; i < children.length; i++) {
-		if(children[i].tagName === 'A') {
-			var a = children[i];
-			a.addEventListener("click", listSelect(a));
-		}
-	}
-}
-
-//Set the list of a clicked link as the current list.
-function listSelect(a) {
-	return function(e) {
-		e.preventDefault();
-		var list = a.getAttribute("data-list");
-		eval("songs = " + list + ";", 0);
-		index = songs.length;
-		forward();
-		initPlaylistDisplay();
-	}
-}
-
-//Handles keypresses on a global scale.
-function globalKeypress(e) {
-	if(!(e.keyCode === 32)) {
-		return false;
-	}
-	playPause(e);
 }
 
 //Play or pause depending on what we are doing right now.
@@ -151,7 +92,6 @@ function setPlayingSong(song) {
 		get("artist").appendChild(a);
 	}
     get("song").innerHTML = song.title;
-	index = songs.indexOf(song);
     player.play();
 }
 
@@ -169,7 +109,6 @@ function progress() {
 //Initializes the display of the current playlist.
 function initPlaylistDisplay() {
     var cnt = get("playlist-container");
-	cnt.innerHTML = "";
     for(var i = 0; i < songs.length; i++) {
         var div = document.createElement("div");
         div.setAttribute("class", "song");
@@ -177,7 +116,7 @@ function initPlaylistDisplay() {
         a.innerHTML = songs[i].artist + " - " + songs[i].title;
         (function(i) {
                 a.addEventListener("click", function() {
-               // console.log(songs[i]);
+                console.log(songs[i]);
                 return setPlayingSong(songs[i]);
             });
         })(i);
@@ -197,7 +136,7 @@ function updateSound() {
 
 //
 //***************************************************************************************************************
-//	Things needed to change the background
+//	Things needed to change the backgorund
 
 //Initializes the change of the backgorund by adding click-listener
 function initBackgroundChange() {
@@ -215,6 +154,6 @@ function initBackgroundChange() {
 
 //sets the backgorund image using the given source.
 function setBackgroundImage(src) {
-	//console.log(src);
+	console.log(src);
 	document.body.style.backgroundImage = 'url("' + src + '")';
 }
